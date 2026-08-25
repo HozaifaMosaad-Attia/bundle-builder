@@ -1,8 +1,6 @@
-// src/Components/ReviewPanel.jsx
 import { steps, reviewIcons } from '../data'
 import ReviewLineItem from './ReviewLineItem'
 
-// بتحول كل الخطوات لقايمة واحدة فيها كل تركيبة (منتج + لون) موجودة فعليًا
 function getFlatItems() {
   const items = []
   steps.forEach((step) => {
@@ -35,14 +33,12 @@ function getFlatItems() {
   return items
 }
 
-// الترتيب المطلوب بالظبط زي التصميم: كاميرات ثم حساسات ثم إكسسوارات ثم الخطة
 const CATEGORY_ORDER = ['Cameras', 'Sensors', 'Accessories', 'Plan']
 
 function ReviewPanel({ quantities, onQuantityChange }) {
   const flatItems = getFlatItems()
   const selectedItems = flatItems.filter((item) => (quantities[item.key] || 0) > 0)
 
-  // بنحسب الإجمالي الحالي والإجمالي الأصلي (قبل الخصم) من المنتجات "مرة واحدة" فقط (مش الاشتراك الشهري)
   const oneTimeItems = selectedItems.filter((item) => !item.isMonthly)
   const total = oneTimeItems.reduce((sum, item) => sum + item.price * (quantities[item.key] || 0), 0)
   const originalTotal = oneTimeItems.reduce(

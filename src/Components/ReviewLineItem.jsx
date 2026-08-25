@@ -1,4 +1,3 @@
-// src/Components/ReviewLineItem.jsx
 function ReviewLineItem({
   name,
   image,
@@ -25,7 +24,6 @@ function ReviewLineItem({
             <button onClick={() => onQuantityChange(itemKey, quantity + 1)}>+</button>
           </div>
         )}
-        {/* السعر مرصوص فوق بعض: السعر الأصلي مشطوب فوق، والسعر الفعلي تحت */}
         <div className="review-price-stack">
           {comparePrice != null && (
             <span className="review-compare-price">

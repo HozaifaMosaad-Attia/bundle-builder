@@ -1,4 +1,3 @@
-// src/Components/ProductCard.jsx
 import { useState } from 'react'
 
 function ProductCard({ product, quantities, onQuantityChange }) {

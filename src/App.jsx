@@ -1,14 +1,22 @@
-// src/App.jsx
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { steps, initialQuantities } from './data'
 import AccordionStep from './Components/AccordionStep'
 import ReviewPanel from './Components/ReviewPanel'
 import './App.css'
 
+const STORAGE_KEY = 'bundle-builder-quantities'
+
 function App() {
   const [openStepId, setOpenStepId] = useState(steps[0].id)
-  // بنبدأ بالكميات المبدئية اللي في data.js بدل ما نبدأ فاضيين، عشان الصفحة تفتح زي التصميم بالظبط
-  const [quantities, setQuantities] = useState(initialQuantities)
+
+  const [quantities, setQuantities] = useState(() => {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    return saved ? JSON.parse(saved) : initialQuantities
+  })
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(quantities))
+  }, [quantities])
 
   const handleQuantityChange = (key, value) => {
     setQuantities((prev) => ({ ...prev, [key]: value }))

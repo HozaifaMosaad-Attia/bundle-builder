@@ -36,7 +36,6 @@ function AccordionStep({ step, isOpen, onToggle, quantities, onQuantityChange, o
             ))}
           </div>
           {onNext && (
-            // ملحوظة: الزرار ده outline (شفاف + بردر) مش معبّى، بعكس زرار Checkout
             <button className="next-button next-button-outline" onClick={onNext.onClick}>
               Next: {onNext.label}
             </button>

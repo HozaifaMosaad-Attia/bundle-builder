@@ -1,6 +1,3 @@
-// src/data.js
-
-// ===== صور المنتجات =====
 import wyseCamV4Black from "./assets/wyze-cam-black-v4.png";
 import wyseCamV4White from "./assets/wyze-cam-white-v4.png";
 import wyseCamV4Gray from "./assets/wyze-cam-gray-v4.png";
@@ -13,9 +10,8 @@ import wyseBatteryCamBlack from "./assets/wyze-battery-cam-pro-black.png";
 import wyseBatteryCamWhite from "./assets/wyze-battery-cam-pro-white.png";
 import wyseMotionSensor from "./assets/wyze-sense-motion-sensor.png";
 import wyseSenseHub from "./assets/wyze-sense-hub.png";
-import wyseMicroSd from "./assets/wyze-micro-sd-ard.png"; // تأكد من الاسم ده لو حصل error
+import wyseMicroSd from "./assets/wyze-micro-sd-ard.png"; 
 
-// ===== أيقونات عمود المراجعة =====
 import fastShippingIcon from "./assets/fast-shipping.png";
 import satisfactionBadge from "./assets/wyze-satisfaction.png";
 import camUnlimitedIcon from "./assets/cam-unlimited.png";
@@ -25,7 +21,6 @@ export const reviewIcons = {
   satisfaction: satisfactionBadge,
 };
 
-// كل خطوة عندها reviewLabel = العنوان اللي هيبان في عمود المراجعة يمين
 export const steps = [
   {
     id: "cameras",
@@ -163,7 +158,6 @@ export const steps = [
   },
 ];
 
-// الكميات المبدئية اللي المفروض الصفحة تفتح بيها (زي ما هو في تصميم Figma بالظبط)
 export const initialQuantities = {
   "cam-v4-black": 1,
   "cam-pan-v3-white": 2,
